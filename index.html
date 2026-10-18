@@ -61,7 +61,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;paddin
 
 /* ——— 1. обложка ——— */
 .hero{position:relative;min-height:clamp(600px,96svh,1080px);color:var(--on-photo);display:flex;flex-direction:column;overflow:hidden;isolation:isolate;background:#8d8a84}
-.hero__img{position:absolute;inset:-4% 0 0;z-index:-2;background:url("assets/img/hero.webp") center 62%/cover no-repeat;transform:scale(1.06);animation:heroIn 2.4s var(--ease) both}
+.hero__img{position:absolute;inset:-40% 0 0;z-index:-2;background:url("assets/img/hero.webp") 50% 100%/cover no-repeat;transform:scale(1.06);animation:heroIn 2.4s var(--ease) both}
 .hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(18,16,14,.42),rgba(18,16,14,.12) 34%,rgba(18,16,14,.08) 58%,rgba(18,16,14,.5))}
 .nav{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;padding-top:calc(26px + env(safe-area-inset-top,0px))}
 .logo{font-family:var(--display);font-size:clamp(24px,2.1vw,34px);line-height:1;text-decoration:none;text-transform:uppercase}
@@ -69,13 +69,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;paddin
 .nav__links a{text-decoration:none;opacity:.94}
 .nav__links a:hover{opacity:1;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1.2px}
 .nav__right{display:flex;flex-direction:column;align-items:flex-end;gap:12px;font-size:16px;text-align:right}
-.hero__mark{margin:auto 0 0;padding-top:8vh}
-/* варианты первого экрана: ?hero=top | zoom | dune */
-html[data-hero="top"] .hero__mark{margin:clamp(20px,5vh,56px) 0 auto;padding-top:0}
-html[data-hero="top"] .hero::before{background:linear-gradient(180deg,rgba(18,16,14,.55),rgba(18,16,14,.32) 42%,rgba(18,16,14,.06) 62%,rgba(18,16,14,.5))}
-html[data-hero="zoom"] .hero__img{background-size:auto 140%;background-position:50% 100%}
-html[data-hero="dune"] .hero__img{background-position:0% 62%}
-.mark{display:block;font-family:var(--display);font-weight:400;line-height:.86;text-shadow:0 2px 40px rgba(10,8,6,.22);white-space:nowrap;text-transform:uppercase;font-size:11.4vw}
+.hero__mark{margin:auto 0 0;padding-top:8vh}.mark{display:block;font-family:var(--display);font-weight:400;line-height:.86;text-shadow:0 2px 40px rgba(10,8,6,.22);white-space:nowrap;text-transform:uppercase;font-size:11.4vw}
 .mark span{display:inline-block;animation:rise 1.3s var(--ease) both;animation-delay:calc(var(--i) * 55ms + .25s)}
 .mark--two{display:none}
 .hero__foot{display:flex;justify-content:space-between;align-items:flex-end;gap:28px;flex-wrap:wrap;padding-block:clamp(36px,7vh,96px) calc(clamp(28px,5vh,56px) + env(safe-area-inset-bottom,0px))}
@@ -599,7 +593,6 @@ html[data-hero="dune"] .hero__img{background-position:0% 62%}
 </footer>
 
 <script>
-(function(){var v=(location.search.match(/hero=(\w+)/)||location.hash.match(/hero-(\w+)/)||[])[1];if(v)document.documentElement.dataset.hero=v})();
 (function(){
   var root=document.documentElement;root.classList.add('js');
   var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
