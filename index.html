@@ -112,6 +112,12 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;paddin
 .card dd{margin:0}
 .card__foot{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;margin-top:20px}
 
+.card__cover.photo{background:var(--soft)}
+.card__cover.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .9s var(--ease)}
+.card:hover .card__cover.photo img{transform:scale(1.025)}
+.card__cover.photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,12,10,.45),rgba(14,12,10,0) 38%)}
+.card__cover.photo .poster__meta{position:absolute;z-index:1;left:0;right:0;top:0;padding:clamp(16px,1.8vw,28px);color:#fff}
+.biz-link{font-size:16px;margin-left:auto;white-space:nowrap}
 /* обложки кейсов: плакаты */
 .poster{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;padding:clamp(18px,2.2vw,36px);transition:transform .9s var(--ease)}
 .card:hover .poster,.card:hover .art{transform:scale(1.025)}
@@ -290,7 +296,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;paddin
 <nav class="dots" aria-label="Разделы">
   <a href="#top" aria-label="Обложка"></a>
   <a href="#studio" aria-label="Студия"></a>
-  <a href="#cases" aria-label="Кейсы"></a>
+  <a href="#cases" aria-label="Для бизнеса"></a>
   <a href="#south" aria-label="Юг"></a>
   <a href="#media" aria-label="Медиа"></a>
   <a href="#founder" aria-label="Основатель"></a>
@@ -307,7 +313,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;paddin
       <a class="logo" href="#top">Achilleion Studio</a>
       <div class="nav__links">
         <a href="#studio">Студия</a>
-        <a href="#cases">Кейсы</a>
+        <a href="#cases">Для бизнеса</a>
         <a href="#south">Города</a>
         <a href="#media">Медиа</a>
         <a href="#founder">Основатель</a>
@@ -339,7 +345,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;paddin
 <!-- 2. СТУДИЯ -->
 <section class="sec wrap" id="studio">
   <p class="statement rv">
-    Мы снимаем <span class="inline-img" role="img" aria-label="Кадр со съёмки"></span> студийные, выездные и&nbsp;документальные серии для&nbsp;брендов юга. Наши проекты <span class="nobr"><span class="inline-pill"><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0l1.9 7.4L20.5 3.5l-3.9 6.6L24 12l-7.4 1.9 3.9 6.6-6.6-3.9L12 24l-1.9-7.4-6.6 3.9 3.9-6.6L0 12l7.4-1.9L3.5 3.5l6.6 3.9z"/></svg>пересказывают</span>,</span> пересылают и&nbsp;<span class="disp">советуют своим</span>.<sup><a class="ulink" href="#cases">Смотреть<br>кейсы →</a></sup>
+    Мы снимаем <span class="inline-img" role="img" aria-label="Кадр со съёмки"></span> студийные, выездные и&nbsp;документальные серии для&nbsp;брендов юга. Наши проекты <span class="nobr"><span class="inline-pill"><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0l1.9 7.4L20.5 3.5l-3.9 6.6L24 12l-7.4 1.9 3.9 6.6-6.6-3.9L12 24l-1.9-7.4-6.6 3.9 3.9-6.6L0 12l7.4-1.9L3.5 3.5l6.6 3.9z"/></svg>пересказывают</span>,</span> пересылают и&nbsp;<span class="disp">советуют своим</span>.<sup><a class="ulink" href="#cases">Для кого<br>снимаем →</a></sup>
   </p>
 
   <div class="spec">
@@ -350,68 +356,77 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;paddin
   </div>
 </section>
 
-<!-- 3. КЕЙСЫ -->
+<!-- 3. ДЛЯ БИЗНЕСА -->
 <section class="sec wrap" id="cases" style="padding-top:0">
   <div class="head">
     <div>
-      <p class="kick">Кейсы</p>
-      <h2 class="disp">Истории, которые работают дольше охватов</h2>
-      <p class="note">✦ В каждом проекте: какой смысл мы снимали и что получил зритель.</p>
+      <p class="kick">Для бизнеса,</p>
+      <h2 class="disp">которому есть что рассказать</h2>
+      <p class="note">✦ Когда каналов продвижения мало, экспертиза становится медиа.</p>
     </div>
     <div class="tools">
-      <a class="pill" data-tg="Здравствуйте! Хочу обсудить проект. Ниша: … Формат: …" href="https://t.me/yudin_dimaa" target="_blank" rel="noopener">Обсудить свой проект <svg class="arr" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9 9 3M4.2 3H9v4.8"/></svg></a>
+      <a class="pill" data-tg="Здравствуйте! Хочу обсудить проект. Сфера: … Формат: …" href="https://t.me/yudin_dimaa" target="_blank" rel="noopener">Обсудить свой проект <svg class="arr" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9 9 3M4.2 3H9v4.8"/></svg></a>
       <div class="arrows" data-for="r-cases"></div>
     </div>
   </div>
   <div class="rail" id="r-cases">
     <article class="card">
-      <div class="card__cover"><div class="poster p-course">
-        <div class="poster__meta"><span>Kinescope</span><span>6 уроков</span></div>
-        <div><div class="poster__word">Урок первый</div><div class="eps"><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
-      </div></div>
-      <h3>Мини-курс для Kinescope</h3>
-      <p>Короткий курс о том, как устроено видео в интернете, от международной IT-компании для её клиентов.</p>
-      <dl><dt>Смысл</dt><dd>Сложный технологичный продукт можно понять за один вечер.</dd><dt>Зрителю</dt><dd>Уверенность: после уроков сервис перестаёт пугать и начинает работать на бизнес.</dd></dl>
-      <div class="card__foot"><span class="tag">курс</span><span class="tag">IT</span><span class="tag">обучение</span></div>
+      <div class="card__cover photo"><img src="assets/img/biz-wine.webp" alt="Сбор урожая на винодельне" loading="lazy" style="object-position:50% 60%"><div class="poster__meta"><span>Винодельня</span><span>Зал ◊ сайт ◊ партнёры</span></div></div>
+      <h3>Винодельни</h3>
+      <p>Терруар, урожай и люди, которые стоят за каждой бутылкой. Видео продолжает дегустацию, когда гость уже уехал.</p>
+      <dl><dt>Снимаем</dt><dd>Фильм о винодельне, ролики о линейке вин, курс по дегустации, интервью с виноделом.</dd><dt>Для чего</dt><dd>Дегустационный зал, сайт и обучение партнёров.</dd></dl>
+      <div class="card__foot"><span class="tag">фильм</span><span class="tag">курс</span><span class="tag">интервью</span><a class="ulink biz-link" data-tg="Здравствуйте! У нас винодельня, интересует видео. Коротко: " href="https://t.me/yudin_dimaa" target="_blank" rel="noopener">Обсудить для винодельни →</a></div>
     </article>
     <article class="card">
-      <div class="card__cover"><div class="poster p-yt">
-        <div class="poster__meta"><span class="rec">Rec</span><span>EN · Global</span></div>
-        <div class="poster__word">Hello,<br>world</div>
-      </div></div>
-      <h3>Англоязычный YouTube-канал</h3>
-      <p>Запуск канала для мировой аудитории: формат, голос, регулярные выпуски.</p>
-      <dl><dt>Смысл</dt><dd>Говорить с глобальной аудиторией на её языке и сохранить голос команды.</dd><dt>Зрителю</dt><dd>Разборы из первых рук, без пересказов и упрощений.</dd></dl>
-      <div class="card__foot"><span class="tag">YouTube</span><span class="tag">серия</span><span class="tag">global</span></div>
+      <div class="card__cover photo"><img src="assets/img/biz-premium.webp" alt="Визуализация премиального курорта у моря" loading="lazy"><div class="poster__meta"><span>Премиальный проект</span><span>Гости ◊ инвесторы</span></div></div>
+      <h3>Премиальные проекты</h3>
+      <p>Курорты, отели и клубные пространства, где атмосфера важнее списка услуг. Показываем, каково здесь быть.</p>
+      <dl><dt>Снимаем</dt><dd>Бренд-фильм о месте, серию о людях проекта, интервью с основателем.</dd><dt>Для чего</dt><dd>Презентации гостям и инвесторам, сайт, закрытые показы.</dd></dl>
+      <div class="card__foot"><span class="tag">бренд-фильм</span><span class="tag">серия</span><span class="tag">интервью</span><a class="ulink biz-link" data-tg="Здравствуйте! У нас премиальный проект (курорт, отель, клубное пространство), интересует фильм. Коротко: " href="https://t.me/yudin_dimaa" target="_blank" rel="noopener">Обсудить проект →</a></div>
     </article>
     <article class="card">
-      <div class="card__cover"><div class="poster p-why">
-        <div class="poster__meta"><span>Продуктовые видео</span><span>Серия</span></div>
-        <div class="poster__word">Зачем,<br>а не как<small>Про ценность функции, а не про кнопки интерфейса.</small></div>
-      </div></div>
-      <h3>Серия продуктовых видео</h3>
-      <p>Ролики, которые объясняют продукт через задачу клиента, а не через экран настроек.</p>
-      <dl><dt>Смысл</dt><dd>Каждая функция существует ради чьей-то задачи. Её мы и показываем.</dd><dt>Зрителю</dt><dd>Понятный ответ на вопрос «что это изменит в моей работе».</dd></dl>
-      <div class="card__foot"><span class="tag">продукт</span><span class="tag">B2B</span><span class="tag">сторителлинг</span></div>
+      <div class="card__cover photo"><img src="assets/img/biz-dev.webp" alt="Жилой дом с зелёными террасами" loading="lazy" style="object-position:50% 40%"><div class="poster__meta"><span>Девелопер</span><span>Покупатели ◊ продажи</span></div></div>
+      <h3>Девелоперы</h3>
+      <p>Дом начинается с замысла. Рассказываем о нём раньше, чем в окнах загорится свет.</p>
+      <dl><dt>Снимаем</dt><dd>Фильм о проекте, курс «как выбрать дом», выездную съёмку на объекте.</dd><dt>Для чего</dt><dd>Отвечают на типовые вопросы покупателей вместо менеджера: в отделе продаж и на сайте.</dd></dl>
+      <div class="card__foot"><span class="tag">фильм</span><span class="tag">курс</span><span class="tag">выезд</span><a class="ulink biz-link" data-tg="Здравствуйте! Мы девелопер, интересует видео для покупателей. Коротко: " href="https://t.me/yudin_dimaa" target="_blank" rel="noopener">Обсудить для девелопера →</a></div>
     </article>
     <article class="card">
-      <div class="card__cover"><div class="poster p-live">
-        <span class="onair">● В эфире</span>
-        <div class="poster__word">Событие,<br>а не стрим</div>
-      </div></div>
-      <h3>Вебинары и онлайн-конференции</h3>
-      <p>Запуск направления с нуля: сценарий эфира, студия, трансляция и запись.</p>
-      <dl><dt>Смысл</dt><dd>Трансляция может быть событием, к которому возвращаются в записи.</dd><dt>Зрителю</dt><dd>Живой разговор с экспертами вместо слайдов под закадровый голос.</dd></dl>
-      <div class="card__foot"><span class="tag">эфир</span><span class="tag">конференция</span><span class="tag">live</span></div>
+      <div class="card__cover photo"><img src="assets/img/biz-arch.webp" alt="Бетонная конструкция с надписью «Причал»" loading="lazy" style="object-position:50% 45%"><div class="poster__meta"><span>Бюро</span><span>Заказчики ◊ медиа ◊ PR</span></div></div>
+      <h3>Архитектурные бюро</h3>
+      <p>Мышление бюро, а не только фасады. Заказчик выбирает людей, с которыми ему будет интересно думать.</p>
+      <dl><dt>Снимаем</dt><dd>Интервью, подкаст об архитектуре юга, студийное шоу, фильмы о проектах.</dd><dt>Для чего</dt><dd>Показывают подход бюро будущим заказчикам, медиа и профессиональному сообществу.</dd></dl>
+      <div class="card__foot"><span class="tag">интервью</span><span class="tag">подкаст</span><span class="tag">шоу</span><a class="ulink biz-link" data-tg="Здравствуйте! У нас архитектурное бюро, интересует интервью или подкаст. Коротко: " href="https://t.me/yudin_dimaa" target="_blank" rel="noopener">Обсудить для бюро →</a></div>
+    </article>
+    <article class="card">
+      <div class="card__cover photo"><img src="assets/img/biz-broker.webp" alt="Белая вилла среди средиземноморского сада" loading="lazy"><div class="poster__meta"><span>Брокер</span><span>Клиенты ◊ команда</span></div></div>
+      <h3>Брокерские агентства</h3>
+      <p>Покупатель доверяет тому, кто знает рынок. Даём экспертизе агентства голос и лицо.</p>
+      <dl><dt>Снимаем</dt><dd>Экспертные видеосерии о рынке, обзоры объектов, подкаст с аналитикой.</dd><dt>Для чего</dt><dd>Прогрев клиентов до первой встречи, сайт, рассылки и обучение команды.</dd></dl>
+      <div class="card__foot"><span class="tag">видеосерия</span><span class="tag">обзоры</span><span class="tag">подкаст</span><a class="ulink biz-link" data-tg="Здравствуйте! У нас брокерское агентство, интересует видео. Коротко: " href="https://t.me/yudin_dimaa" target="_blank" rel="noopener">Обсудить для агентства →</a></div>
+    </article>
+    <article class="card">
+      <div class="card__cover photo"><img src="assets/img/biz-gallery.webp" alt="Посетители галереи перед картиной" loading="lazy"><div class="poster__meta"><span>Галерея</span><span>Зрители ◊ коллекционеры</span></div></div>
+      <h3>Галереи</h3>
+      <p>Выставка закрывается, фильм о ней остаётся. Сохраняем голос художника и замысел куратора.</p>
+      <dl><dt>Снимаем</dt><dd>Фильмы о выставках, интервью с художниками и кураторами, записи лекций.</dd><dt>Для чего</dt><dd>Архив галереи, онлайн-аудитория, партнёры и коллекционеры.</dd></dl>
+      <div class="card__foot"><span class="tag">фильм</span><span class="tag">интервью</span><span class="tag">лекции</span><a class="ulink biz-link" data-tg="Здравствуйте! У нас галерея, интересует фильм о выставке или интервью. Коротко: " href="https://t.me/yudin_dimaa" target="_blank" rel="noopener">Обсудить для галереи →</a></div>
+    </article>
+    <article class="card">
+      <div class="card__cover photo"><img src="assets/img/biz-events.webp" alt="Гости на торжественном ужине" loading="lazy" style="object-position:50% 55%"><div class="poster__meta"><span>Событие</span><span>Гости ◊ партнёры</span></div></div>
+      <h3>События</h3>
+      <p>Гала-ужины, фестивали, форумы и закрытые вечера. Вечер длится несколько часов, фильм о нём работает весь год.</p>
+      <dl><dt>Снимаем</dt><dd>Фильм о событии, интервью со спикерами и гостями, записи выступлений.</dd><dt>Для чего</dt><dd>Отчёт для партнёров, анонс следующего события, контент на год вперёд.</dd></dl>
+      <div class="card__foot"><span class="tag">фильм</span><span class="tag">интервью</span><span class="tag">выступления</span><a class="ulink biz-link" data-tg="Здравствуйте! Хотим снять фильм о нашем событии. Что и когда: " href="https://t.me/yudin_dimaa" target="_blank" rel="noopener">Обсудить событие →</a></div>
     </article>
     <article class="card card--next">
       <div class="card__cover"><div class="poster">
-        <div class="poster__meta"><span>Скоро здесь</span><span>2027</span></div>
+        <div class="poster__meta"><span>Ваша сфера</span><span>Разбор ◊ 30 минут</span></div>
         <div class="poster__word">Ваша<br>история</div>
       </div></div>
-      <h3>Следующий кейс</h3>
-      <p>Винодельня, архитектурное бюро, производство или бренд, которому есть что рассказать. Начнём с 30-минутного разбора идеи.</p>
-      <div class="card__foot"><a class="pill" data-tg="Здравствуйте! Хочу записаться на бесплатный разбор идеи. Коротко о проекте: " href="https://t.me/yudin_dimaa" target="_blank" rel="noopener">Записаться на разбор <svg class="arr" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9 9 3M4.2 3H9v4.8"/></svg></a></div>
+      <h3>Не нашли свою сферу?</h3>
+      <p>Расскажите о бизнесе, а мы предложим формат. Начнём с бесплатного 30-минутного разбора идеи.</p>
+      <div class="card__foot"><a class="pill" data-tg="Здравствуйте! Хочу записаться на бесплатный разбор идеи. Сфера: … Коротко о проекте: " href="https://t.me/yudin_dimaa" target="_blank" rel="noopener">Записаться на разбор <svg class="arr" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9 9 3M4.2 3H9v4.8"/></svg></a></div>
     </article>
   </div>
 </section>
@@ -558,7 +573,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;paddin
     <a class="thumb thumb--img" href="#south" style="background-image:url('assets/img/south.webp');background-position:44% 50%" aria-label="Города юга"></a>
     <a class="thumb" href="#media" aria-label="Аврора"><div class="art aurora"></div></a>
     <a class="thumb thumb--img" href="#founder" style="background-image:url('assets/img/founder.webp');background-position:50% 22%" aria-label="Основатель"></a>
-    <a class="thumb" href="#cases" aria-label="Кейсы"><div class="poster p-live" style="padding:12%"><span class="poster__meta"><span>● Live</span></span><span class="disp" style="font-size:clamp(16px,2vw,34px);line-height:.9">В эфире</span></div></a>
+    <a class="thumb" href="#cases" aria-label="Для бизнеса"><div class="poster p-live" style="padding:12%"><span class="poster__meta"><span>● Live</span></span><span class="disp" style="font-size:clamp(16px,2vw,34px);line-height:.9">В эфире</span></div></a>
     <a class="thumb" href="#quotes" aria-label="Цитаты"><div class="type">«Кадр»</div></a>
     <a class="thumb" href="https://t.me/yudin_dimaa" target="_blank" rel="noopener" aria-label="Telegram"><div class="tg"><span>Telegram</span><b>Разбор идеи</b><span>30 минут →</span></div></a>
   </div>
@@ -578,7 +593,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;paddin
     <div>
       <h4>Разделы</h4>
       <ul>
-        <li><a href="#studio">Студия</a></li><li><a href="#cases">Кейсы</a></li><li><a href="#media">Медиа</a></li><li><a href="#founder">Основатель</a></li><li><a href="#picks">Подборки</a></li>
+        <li><a href="#studio">Студия</a></li><li><a href="#cases">Для бизнеса</a></li><li><a href="#media">Медиа</a></li><li><a href="#founder">Основатель</a></li><li><a href="#picks">Подборки</a></li>
       </ul>
     </div>
     <div>
