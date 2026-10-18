@@ -39,6 +39,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;paddin
 
 /* ——— пилюли и стрелки ——— */
 .pill{display:inline-flex;align-items:center;gap:.35em;border:1.5px solid currentColor;border-radius:999px;padding:.42em 1.05em .46em;font-size:clamp(16px,1.15vw,20px);line-height:1.1;text-decoration:none;white-space:nowrap;transition:background .25s,color .25s}
+.arr{width:.68em;height:.68em;flex:none;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
 .pill:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
 .on-photo .pill:hover{background:var(--on-photo);color:#151413;border-color:var(--on-photo)}
 .tag{display:inline-flex;border:1.2px solid var(--line);border-radius:999px;padding:.12em .6em .16em;font-size:15px;line-height:1.2;white-space:nowrap}
@@ -69,6 +70,11 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;paddin
 .nav__links a:hover{opacity:1;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1.2px}
 .nav__right{display:flex;flex-direction:column;align-items:flex-end;gap:12px;font-size:16px;text-align:right}
 .hero__mark{margin:auto 0 0;padding-top:8vh}
+/* варианты первого экрана: ?hero=top | zoom | dune */
+html[data-hero="top"] .hero__mark{margin:clamp(20px,5vh,56px) 0 auto;padding-top:0}
+html[data-hero="top"] .hero::before{background:linear-gradient(180deg,rgba(18,16,14,.55),rgba(18,16,14,.32) 42%,rgba(18,16,14,.06) 62%,rgba(18,16,14,.5))}
+html[data-hero="zoom"] .hero__img{background-size:auto 140%;background-position:50% 100%}
+html[data-hero="dune"] .hero__img{background-position:0% 62%}
 .mark{display:block;font-family:var(--display);font-weight:400;line-height:.86;text-shadow:0 2px 40px rgba(10,8,6,.22);white-space:nowrap;text-transform:uppercase;font-size:11.4vw}
 .mark span{display:inline-block;animation:rise 1.3s var(--ease) both;animation-delay:calc(var(--i) * 55ms + .25s)}
 .mark--two{display:none}
@@ -317,7 +323,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;paddin
     </div>
     <div class="nav__right">
       <span>Снято на юге</span>
-      <a class="pill" data-tg="Здравствуйте! Хочу обсудить проект с Achilleion Studio." href="https://t.me/yudin_dimaa" target="_blank" rel="noopener">Telegram ↗</a>
+      <a class="pill" data-tg="Здравствуйте! Хочу обсудить проект с Achilleion Studio." href="https://t.me/yudin_dimaa" target="_blank" rel="noopener">Telegram <svg class="arr" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9 9 3M4.2 3H9v4.8"/></svg></a>
     </div>
   </div>
   <h1 class="hero__mark wrap">
@@ -328,7 +334,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;paddin
   <div class="hero__foot wrap">
     <div>
       <p class="hero__lede">Видеопродакшен для брендов юга России. Снимаем курсы, документальные серии, интервью и&nbsp;подкасты, которые хочется досмотреть и&nbsp;пересказать.</p>
-      <a class="pill" data-tg="Здравствуйте! Хочу записаться на бесплатный разбор идеи. Коротко о проекте: " href="https://t.me/yudin_dimaa" target="_blank" rel="noopener">Бесплатный разбор идеи ↗</a>
+      <a class="pill" data-tg="Здравствуйте! Хочу записаться на бесплатный разбор идеи. Коротко о проекте: " href="https://t.me/yudin_dimaa" target="_blank" rel="noopener">Бесплатный разбор идеи <svg class="arr" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9 9 3M4.2 3H9v4.8"/></svg></a>
     </div>
     <div class="hero__coord">45.0355° N, 38.9753° E<br>Краснодар → всё побережье</div>
   </div>
@@ -359,7 +365,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;paddin
       <p class="note">✦ В каждом проекте: какой смысл мы снимали и что получил зритель.</p>
     </div>
     <div class="tools">
-      <a class="pill" data-tg="Здравствуйте! Хочу обсудить проект. Ниша: … Формат: …" href="https://t.me/yudin_dimaa" target="_blank" rel="noopener">Обсудить свой проект ↗</a>
+      <a class="pill" data-tg="Здравствуйте! Хочу обсудить проект. Ниша: … Формат: …" href="https://t.me/yudin_dimaa" target="_blank" rel="noopener">Обсудить свой проект <svg class="arr" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9 9 3M4.2 3H9v4.8"/></svg></a>
       <div class="arrows" data-for="r-cases"></div>
     </div>
   </div>
@@ -411,7 +417,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;paddin
       </div></div>
       <h3>Следующий кейс</h3>
       <p>Винодельня, архитектурное бюро, производство или бренд, которому есть что рассказать. Начнём с 30-минутного разбора идеи.</p>
-      <div class="card__foot"><a class="pill" data-tg="Здравствуйте! Хочу записаться на бесплатный разбор идеи. Коротко о проекте: " href="https://t.me/yudin_dimaa" target="_blank" rel="noopener">Записаться на разбор ↗</a></div>
+      <div class="card__foot"><a class="pill" data-tg="Здравствуйте! Хочу записаться на бесплатный разбор идеи. Коротко о проекте: " href="https://t.me/yudin_dimaa" target="_blank" rel="noopener">Записаться на разбор <svg class="arr" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9 9 3M4.2 3H9v4.8"/></svg></a></div>
     </article>
   </div>
 </section>
@@ -425,7 +431,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;paddin
       <li>Краснодар</li><li>Анапа</li><li>Геленджик</li><li>Ростов</li><li>Новороссийск</li><li>Сочи</li>
     </ul>
     <p class="rv">Мы мобильная студия. Привозим свой свет, камеры и звук, снимаем в лучшей студии вашего города или там, где живёт ваша история: на винограднике, в мастерской, у моря.</p>
-    <a class="pill rv" data-tg="Здравствуйте! Интересует съёмка. Город: … Формат: …" href="https://t.me/yudin_dimaa" target="_blank" rel="noopener">Приехать к вам ↗</a>
+    <a class="pill rv" data-tg="Здравствуйте! Интересует съёмка. Город: … Формат: …" href="https://t.me/yudin_dimaa" target="_blank" rel="noopener">Приехать к вам <svg class="arr" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9 9 3M4.2 3H9v4.8"/></svg></a>
   </div>
 </section>
 
@@ -438,7 +444,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;paddin
       <p class="note">✦ Длинные тексты, которые мы пишем для себя и для вас.</p>
     </div>
     <div class="tools">
-      <a class="pill" href="https://t.me/yudin_dimaa" target="_blank" rel="noopener">Все статьи ↗</a>
+      <a class="pill" href="https://t.me/yudin_dimaa" target="_blank" rel="noopener">Все статьи <svg class="arr" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9 9 3M4.2 3H9v4.8"/></svg></a>
       <div class="arrows" data-for="r-media"></div>
     </div>
   </div>
@@ -485,7 +491,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;paddin
         <li class="rv"><b>Achilleion Studio</b><span>Видеопродакшен уровня международных IT-компаний, теперь на юге</span><em>Основатель</em></li>
       </ul>
       <div class="cta">
-        <a class="pill" data-tg="Здравствуйте, Дмитрий! Хочу обсудить проект." href="https://t.me/yudin_dimaa" target="_blank" rel="noopener">Написать Дмитрию ↗</a>
+        <a class="pill" data-tg="Здравствуйте, Дмитрий! Хочу обсудить проект." href="https://t.me/yudin_dimaa" target="_blank" rel="noopener">Написать Дмитрию <svg class="arr" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9 9 3M4.2 3H9v4.8"/></svg></a>
         <span class="copy">@yudin_dimaa</span>
       </div>
     </div>
@@ -514,7 +520,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;paddin
       <p class="note">✦ Кино юга и Северного Кавказа. Пополняем вместе с краснодарскими медиа.</p>
     </div>
     <div class="tools">
-      <a class="pill" href="https://t.me/yudin_dimaa" target="_blank" rel="noopener">Подборки в Telegram ↗</a>
+      <a class="pill" href="https://t.me/yudin_dimaa" target="_blank" rel="noopener">Подборки в Telegram <svg class="arr" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9 9 3M4.2 3H9v4.8"/></svg></a>
       <div class="arrows" data-for="r-picks"></div>
     </div>
   </div>
@@ -593,6 +599,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;paddin
 </footer>
 
 <script>
+(function(){var v=(location.search.match(/hero=(\w+)/)||location.hash.match(/hero-(\w+)/)||[])[1];if(v)document.documentElement.dataset.hero=v})();
 (function(){
   var root=document.documentElement;root.classList.add('js');
   var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -615,9 +622,21 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;paddin
       var s=el.scrollWidth;el.style.display='';
       if(s)el.style.fontSize=(100*w/s*.995)+'px';
     });
+    // мобильный вордмарк в две строки: подгоняем по самой длинной строке
+    var two=document.querySelector('.mark--two');
+    if(two&&two.offsetParent){
+      var b=two.parentElement,bs=getComputedStyle(b);
+      var bw=b.clientWidth-parseFloat(bs.paddingLeft)-parseFloat(bs.paddingRight);
+      two.style.fontSize='100px';
+      var mw=Math.max.apply(null,[].map.call(two.querySelectorAll(':scope > span'),function(s){return s.offsetWidth}));
+      if(mw)two.style.fontSize=(100*bw/mw*.97)+'px';    }
   }
   fit();
   if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);
+  if(document.fonts&&document.fonts.load)document.fonts.load('100px Druzhok').then(fit);
+  addEventListener('load',function(){fit();setTimeout(fit,800)});
+  if(document.fonts&&document.fonts.addEventListener)document.fonts.addEventListener('loadingdone',fit);
+  if('ResizeObserver' in window){var fro=new ResizeObserver(function(){clearTimeout(rt);rt=setTimeout(fit,30)});document.querySelectorAll('.mark--two > span,[data-fit]').forEach(function(e){fro.observe(e)})}
   var rt;addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(fit,120)});
 
   // Мозаики: восход над морем из смальты
